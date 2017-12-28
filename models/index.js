@@ -5,4 +5,4 @@ mongoose.connect('mongodb://localhost/todo-api');
 
 mongoose.Promise = Promise;
 
-module.export = require('./todo');
+module.exports.Todo = require('./todo');
