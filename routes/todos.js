@@ -12,4 +12,11 @@ router.get('/', function(req, res){
     });
 });
 
+router.post('/', function(req, res){
+  db.Todo.create(req.body)
+  .then(function(newTodo) {
+    res.status(201).json(newTodo);
+  })
+});
+
 module.exports = router;
