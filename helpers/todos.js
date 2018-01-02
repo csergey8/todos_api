@@ -39,4 +39,14 @@ exports.updateTodo = function(req, res){
   })
 }
 
+exports.deleteTodo = function(req, res){
+  db.Todo.remove({_id: req.params.todoId})
+  .then(() => {
+    res.send('Deleted');
+  })
+  .catch((err) => {
+    res.send(err);
+  })
+}
+
 module.exports = exports;
