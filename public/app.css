@@ -71,10 +71,25 @@ li {
   line-height: 1.5;
   padding: 10px 5px 10px 5px;
   list-style: none;
+  position: relative;
+  transition: background-color 0.2s ease-in;
+}
+
+.task:hover span{
+  opacity: 1;
 }
 
 li:hover {
   background-color: #d7dee0;
+}
+
+li > span {
+  color: red;
+  position: absolute;
+  right: 10px;
+  opacity: 0;
+  cursor: pointer;
+  transition: all 0.2s linear;
 }
 
 .done {
