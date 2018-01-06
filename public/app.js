@@ -6,7 +6,7 @@ $(document).ready(function() {
     })
 
   $('#todoInput').keypress((event) => {
-    if(event.which == 13) {
+    if(event.which == 13 && $('#todoInput').val() != '') {
       var val = $('#todoInput').val();
       createTodo(val);
     }
@@ -66,12 +66,12 @@ function updateTodo(todo) {
     method: 'PUT',
     url: '/api/todos/' + clickedId,
     data: updateData
-  })
-  .then(function(updatedTodo) {
+    })
+    .then(function(updatedTodo) {
     todo.toggleClass("done");
     todo.data('completed', isDone);
-  })
-  .catch((err) => {
+    })
+    .catch((err) => {
     console.log(err);
-  })
+    })
 }
